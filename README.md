@@ -1,36 +1,177 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 Clarity Log
 
-## Getting Started
+Clarity Log is a modern decision journal designed to help you track
+important decisions, evaluate outcomes, and improve your judgment over
+time.
 
-First, run the development server:
+Instead of forgetting why you made a decision, Clarity Log helps you
+build a structured feedback loop for better thinking.
 
-```bash
+------------------------------------------------------------------------
+
+## ✨ Why Clarity Log?
+
+Most people:
+
+-   Make decisions based on incomplete context\
+-   Overestimate their confidence\
+-   Repeat the same mistakes\
+-   Forget lessons learned
+
+Clarity Log helps you:
+
+-   Log decisions with context\
+-   Track expected vs actual outcomes\
+-   Measure confidence accuracy\
+-   Reflect on lessons learned\
+-   Improve long-term judgment
+
+------------------------------------------------------------------------
+
+## 🚀 MVP Features
+
+-   🔐 Authentication (Email + Password)
+-   ➕ Create decisions
+-   📋 View & filter decision history
+-   🗓 Review decisions after review date
+-   📊 Basic insights dashboard:
+    -   Total decisions
+    -   \% good vs bad outcomes
+    -   Average confidence score
+    -   Simple analytics overview
+
+------------------------------------------------------------------------
+
+## 🧱 Tech Stack
+
+### Frontend
+
+-   Next.js (App Router)
+-   Tailwind CSS
+-   TanStack Query
+-   Zod (validation)
+
+### Backend
+
+-   Server Actions
+-   PostgreSQL
+-   Prisma ORM
+
+### Authentication
+
+-   Auth.js (Credentials Provider)
+
+### Deployment
+
+-   Vercel
+
+------------------------------------------------------------------------
+
+## 🗄 Database Schema (MVP)
+
+### User
+
+-   id
+-   email
+-   password_hash
+-   created_at
+
+### Decision
+
+-   id
+-   user_id
+-   title
+-   context
+-   expected_outcome
+-   confidence (1--10)
+-   category
+-   status ("open" \| "reviewed")
+-   review_date
+-   actual_outcome
+-   result_rating ("good" \| "neutral" \| "bad")
+-   lessons_learned
+-   reviewed_at
+-   created_at
+-   updated_at
+
+------------------------------------------------------------------------
+
+## 📂 Project Structure
+
+    app/
+      dashboard/
+      decision/
+        new/
+        [id]/
+    lib/
+      db/
+      actions/
+      auth/
+    schema/
+      decision.schema.ts
+    components/
+
+------------------------------------------------------------------------
+
+## 🛠 Local Development
+
+``` bash
+# Install dependencies
+npm install
+
+# Setup database
+npx prisma migrate dev
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+------------------------------------------------------------------------
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔐 Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env` file:
 
-## Learn More
+    DATABASE_URL=
+    AUTH_SECRET=
+    NEXTAUTH_URL=
 
-To learn more about Next.js, take a look at the following resources:
+------------------------------------------------------------------------
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎯 Roadmap
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Phase 1 (MVP)
 
-## Deploy on Vercel
+-   Authentication
+-   Decision CRUD
+-   Review system
+-   Insights dashboard
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Phase 2
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-   Tags & filtering
+-   Email reminders
+-   Confidence analytics chart
+-   Dark mode
+-   Export to CSV
+
+### Phase 3
+
+-   AI pattern detection
+-   Team decision tracking
+-   Public reflection pages
+
+------------------------------------------------------------------------
+
+## 🧠 Core Philosophy
+
+> Better decisions come from measured reflection.
+
+Clarity Log is not just a note-taking app --- it is a system for
+improving how you think.
+
+------------------------------------------------------------------------
+
+## 📄 License
+
+MIT
