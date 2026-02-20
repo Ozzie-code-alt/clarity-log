@@ -117,13 +117,13 @@ Clarity Log helps you:
 
 ``` bash
 # Install dependencies
-npm install
+pnpm install
 
 # Setup database
-npx prisma migrate dev
+pnpm prisma migrate dev
 
 # Run development server
-npm run dev
+pnpm run dev
 ```
 
 ------------------------------------------------------------------------

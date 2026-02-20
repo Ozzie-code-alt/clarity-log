@@ -41,5 +41,8 @@ yarn-error.log*
 next-env.d.ts
 
 #frontend 
-
 frontend/web/.next
+frontend/web/node_modules
+
+#backend
+backend/node_modules

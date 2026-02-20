@@ -7,9 +7,9 @@
         "shared/*"
     ],
     "scripts": {
-        "dev:web": "npm --workspace frontend/web run dev",
-        "dev:api": "npm --workspace backend/api run dev",
-        "dev": "concurrently \"npm run dev:web\" \"npm run dev:api\""
+        "dev:web": "pnpm --workspace frontend/web run dev",
+        "dev:api": "pnpm --workspace backend/api run dev",
+        "dev": "concurrently \"pnpm run dev:web\" \"pnpm run dev:api\""
     },
     "devDependencies": {
         "concurrently": "^9.0.0"
